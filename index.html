@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Rekayasa Perangkat Lunak</title>
+    <style>
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Kalkulator Rekayasa Perangkat Lunak</h2>
+        <form>
+            <input type="text" id="angka1" placeholder="Angka pertama">
+            <input type="text" id="angka2" placeholder="Angka kedua">
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <button type="button" onclick="hitung()">Hitung</button>
+        </form>
+        <h3>Hasil: <span id="hasil"></span></h3>
+    </div>
+
+    <script>
+        function hitung() {
+            var angka1 = parseInt(document.getElementById('angka1').value);
+            var angka2 = parseInt(document.getElementById('angka2').value);
+            var operator = document.getElementById('operator').value;
+            var hasil = 0;
+
+            switch (operator) {
+                case '+':
+                    hasil = angka1 + angka2;
+                    break;
+                case '-':
+                    hasil = angka1 - angka2;
+                    break;
+                case '*':
+                    hasil = angka1 * angka2;
+                    break;
+                case '/':
+                    hasil = angka1 / angka2;
+                    break;
+            }
+
+            document.getElementById('hasil').innerHTML = hasil;
+        }
+    </script>
+</body>
+</html>
